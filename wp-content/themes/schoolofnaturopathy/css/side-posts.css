@@ -1,0 +1,42 @@
+@media (max-width: 991px) {
+    .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: none;
+        max-width: 100%;
+    }
+}
+card-header {
+    background-color: #FFF;
+}
+.sc-card.sc-card-sm {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: solid 1px #DDD;
+}
+.sc-card.sc-card-sm img {
+    max-width: 100px;
+}
+.sc-card.sc-card-sm p {
+    color: gray;
+    margin-bottom: 5px !important;
+}
+.sc-card.sc-card-sm p, .sc-card.sc-card-sm a {
+    font-size: 12px;
+}
+
+.card.sc-card.sc-card-md {
+    padding-top: 0 !important;
+    margin-bottom: 20px;
+}
+.card-img-top {
+    padding-bottom: 20px;
+}
+.card img {
+    border: none !important;
+}
+#text-2 {
+    margin-bottom: 0 !important;
+}
+.caption {
+    font-size: 11px;
+}

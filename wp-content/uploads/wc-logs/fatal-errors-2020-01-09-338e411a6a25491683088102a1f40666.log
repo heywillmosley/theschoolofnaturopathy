@@ -1,0 +1,68 @@
+2020-01-09T18:40:33+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:83
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp- in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 83
+
+2020-01-09T18:41:50+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:83
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp- in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 83
+
+2020-01-09T18:58:34+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:95
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp- in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 95
+
+2020-01-09T18:59:18+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:95
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp- in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 95
+
+2020-01-09T19:00:12+00:00 CRITICAL syntax error, unexpected '$summary' (T_VARIABLE) in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 96
+
+2020-01-09T19:00:45+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:96
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp- in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 96
+
+2020-01-09T19:01:41+00:00 CRITICAL Uncaught Error: Call to undefined function trunc() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php:104
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php(72): ewsn_render_side_posts(Array)
+#1 /home/schoolofnat/public_html/wp-includes/shortcodes.php(325): ewsn_sidebar_function('', '', 'ewsn-sidebar')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 /home/schoolofnat/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#4 /home/schoolofnat/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#5 /home/schoolofnat/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#6 /home/schoolofnat/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#7 /home/schoolofnat/public_html/wp-includes/class-wp in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 104
+
