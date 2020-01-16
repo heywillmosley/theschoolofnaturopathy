@@ -4,127 +4,21 @@ Template Name: School
 */
 
 get_header(); 
+wp_enqueue_style( 'school', get_stylesheet_directory_uri() . '/css/school.css' ); // styles
+require_once( get_stylesheet_directory_uri() . '/includes/school_functions.php');
 
 the_post_thumbnail( 'portrait' ); // style for images
-$programs = get_field('program', 'options'); // Grab global program variable
+//$programs = get_field('program', 'options'); // Grab global program variable
 $image_size = 'portrait'; // (thumbnail, medium, large, full or custom size)
 
 // Constants
+define('EWSN_PROGRAMS', get_field('program', 'options') );
 define("EWSN_STUDENT", FALSE);
 define("EWSN_CURRICULUM", FALSE);
 define("EWSN_PAYMENT", FALSE);
 define("EWSN_DEBUG", FALSE);
+
 ?>
-
-<style>
-.page-programs {
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-.page-programs .title {
-  text-align: center;
-  padding: 30px 0;
-  margin: 0 auto 20px;
-  border-bottom: 1px solid #ccc;
-  max-width: 700px;
-}
-.page-programs .summary {
-  text-align: center !important;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-.page-programs .program-grid {
-  margin-bottom: 20px;
-}
-.page-programs .program-grid .program-block {
-  max-width: 340px;
-  margin: 0 auto 20px;
-}
-.page-programs .program-grid .program-block p {
-  font-size: 14px !important;
-}
-.page-programs .program-grid .program-block .block-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  line-height: 1.1;
-  min-height: 44px;
-}
-.page-programs .program-grid .program-block .far.fa-arrow-alt-circle-right {
-  font-size: 16px !important;
-}
-.page-programs .program-grid .program-block .continue-program {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.page-programs .program-grid .program-block .quick-links {
-  font-size: 14px;
-}
-.page-program-single {
-  max-width: 650px;
-  margin: 0 auto 40px;
-}
-.page-program-single .col {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  padding-bottom: 20px !important;
-  border-bottom: solid 1px #ccc;
-}
-.page-program-single .title {
-  text-align: center !important;
-  margin: 0 auto 20px !important;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc !important;
-}
-.page-program-single .headline {
-  font-family: Open Sans, sans-serif;
-  font-weight: 300;
-  font-size: 30px;
-  text-align: center !important;
-  margin-bottom: 20px !important;
-}
-.page-program-single .summary {
-  text-align: center;
-  margin: 0 auto 20px;
-  max-width: 650px;
-  font-size: 15px;
-}
-.page-program-single .quick-links {
-  margin: 0 auto 20px !important;
-}
-.page-program-single .quick-links li {
-  display: inline-block;
-}
-.page-program-single img {
-  margin: 0 auto;
-  display: block;
-}
-.page-program-single .testimony {
-  margin: 20px 0;
-}
-.page-program-single .track-breakdown {
-  width: 100%;
-}
-.page-program-single .track-breakdown .learndash_topic_dots.type-list {
-  display: block !important;
-}
-.page-program-single .track-breakdown #learndash_course_content_title,
-.page-program-single .track-breakdown .expand_collapse,
-.page-program-single .track-breakdown #lesson_heading,
-.page-program-single .track-breakdown #learndash_quizzes {
-  display: none !important;
-}
-@media (max-width: 575px) {
-  .page-programs {
-    max-width: 340px;
-    margin: 0 auto;
-  }
-}
-
-
-</style>
 
 <div class="fl-content-full container">
 	<div class="row">
@@ -135,14 +29,14 @@ define("EWSN_DEBUG", FALSE);
 					<div class="page-programs">
 						<h1 class="title">School Programs</h1>
 						<p class="summary"><?php the_field('school_description', 'options'); ?></p>
-						<?php echo render_page_programs ($programs); ?>
+						<?php render_page_programs (); ?>
 					</div><!-- end page-programs --> 
 				<?php endif // end if on program page ?>
 				
 				<!-- Single Program Landing Page -->
-				<?php if($programs) : ?>
+				<?php if( EWSN_PROGRAMS ) : ?>
 					<div class="row">
-						<?php foreach( $programs as $program ) : ?>
+						<?php foreach( EWSN_PROGRAMS as $program ) : ?>
 							<?php if($program['program_landing'] == get_permalink() ) : ?>
 
 								<?php // Program Variables
@@ -151,6 +45,7 @@ define("EWSN_DEBUG", FALSE);
 								$headline = $program['program_headline'];
 								$summary = $program['program_summary'];
 								$image_size = 'large'; // (thumbnail, medium, large, full or custom size)
+								$program_membership = $program['connected_membership_plan'][0];
 								?>
 								<div class="page-program-single">
 									<div class="row">
@@ -208,29 +103,48 @@ function render_ewsn_debug($program) {
 }
 
 // Render Page Programs
-function render_page_programs ($programs, $image_size = 'portrait') {
-	
+function render_page_programs ($image_size = 'portrait') {
+
+	$contd_render = "<div class='row'>";
+
 	$render = "<div class='program-grid'>";
 	$render .= "<div class='row'>";
+
 	
-	if($programs) {
+	if(EWSN_PROGRAMS) {
 		$i = 0;
-		foreach( $programs as $program ) {
+		foreach( EWSN_PROGRAMS as $program ) {
 			
 			$title = $program['program_title'];
 			$summary = $program['program_summary'];
 			$program_link = $program['program_landing'];
 			$program_roadmap = $program['program_roadmap'];
+			$program_membership = $program['connected_membership_plan'][0];
 
+			// Contd Render
+			if(in_array( $program_membership, get_current_user_membership_ids() ) ) { // show continue program if member active
+
+				$contd_render .= "<div class='col-sm-4'>";
+				$contd_render .= "<div class='card'>";
+				$contd_render .= wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' );
+				$contd_render .= "<div class='card-body'>";
+				$contd_render .= "<h5 class='card-title'>$title</h5>";
+				//$contd_render .= "<p class='card-text'>$summary</p>";
+				$contd_render .= "<a href='$program_roadmap' class='btn btn-primary'>Continue Program</a>";
+				$contd_render .=  "<p class='caption mt-2'><a href='$program_link'>More Details</a></p>";
+				$contd_render .= "</div>";
+				$contd_render .= "</div>";
+				$contd_render .= "</div>";
+
+			} 
+
+			// Programs
 			$render .= "<div class='col-sm-6 program-block'>";
 			$render .= "<a href='$program_link'><h2 class='block-title'><small>$title</small></h2></a>";
-
-			if($member) {
-			$render .= "<a class='continue-program' href='$program_roadmap'>Continue Program<i class='far fa-arrow-alt-circle-right'></i></a>";
-			} // end if($member)
-
 			$render .= "<a href='$program_link'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], $image_size ) . "</a>";
 			$render .= "<p class='pt-3'>$summary</p>";
+			if(in_array( $program_membership, get_current_user_membership_ids() ) )
+					$render .= "<p>Currently Enrolled</p>";
 			$render .=  render_quick_links($program_link, FALSE);
 			$render .= "</div>"; // end col-sm-6
 			
@@ -241,9 +155,12 @@ function render_page_programs ($programs, $image_size = 'portrait') {
 			
 		} // end foreach
 	} // programs
-	
+
+	$contd_render .= "</div><hr/>"; // end programs
+
 	$render .= "</div>"; // end row
 	$render .= "</div>"; // end programs
+	echo $contd_render;
 	echo $render;
 	
 } // end render_page_programs
@@ -332,6 +249,7 @@ function render_program_overview($overview) {
 }
 
 function render_app_btn($url) {
+
 		echo "<a href='$url' target='_blank' class='btn btn-block btn-success btn-lg' role='button'>Fill Out Application</a>";
 }
 
@@ -520,6 +438,22 @@ function render_faq ($faqs) {
 		echo $render;
 
 	} // end empty faq
+}
+
+function get_current_user_membership_ids() { // return array
+	$user_id = get_current_user_id();
+	$args = array( 
+	    'status' => array( 'active' ),
+	); 
+	$memberships = wc_memberships_get_user_active_memberships( $user_id, $args );
+	$membership_IDs = array();
+	$i = 0;
+	foreach($memberships as $membership) {
+		$membership_IDs[$i] = $membership->plan_id;
+		$i++;
+	}
+
+	return $membership_IDs;
 }
 
 get_footer(); ?>

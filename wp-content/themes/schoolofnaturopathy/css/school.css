@@ -1,0 +1,109 @@
+.caption, p.caption {
+    font-size: 12px !important;
+    color: gray;
+}
+.page-programs {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.page-programs .title {
+  text-align: center;
+  padding: 30px 0;
+  margin: 0 auto 20px;
+  border-bottom: 1px solid #ccc;
+  max-width: 700px;
+}
+.page-programs .summary {
+  text-align: center !important;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.page-programs .program-grid {
+  margin-bottom: 20px;
+}
+.page-programs .program-grid .program-block {
+  max-width: 340px;
+  margin: 0 auto 20px;
+}
+.page-programs .program-grid .program-block p {
+  font-size: 14px !important;
+}
+.page-programs .program-grid .program-block .block-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  min-height: 44px;
+}
+.page-programs .program-grid .program-block .far.fa-arrow-alt-circle-right {
+  font-size: 16px !important;
+}
+.page-programs .program-grid .program-block .continue-program {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.page-programs .program-grid .program-block .quick-links {
+  font-size: 14px;
+}
+.page-program-single {
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+.page-program-single .col {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 20px !important;
+  border-bottom: solid 1px #ccc;
+}
+.page-program-single .title {
+  text-align: center !important;
+  margin: 0 auto 20px !important;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc !important;
+}
+.page-program-single .headline {
+  font-family: Open Sans, sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+}
+.page-program-single .summary {
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 650px;
+  font-size: 15px;
+}
+.page-program-single .quick-links {
+  margin: 0 auto 20px !important;
+}
+.page-program-single .quick-links li {
+  display: inline-block;
+}
+.page-program-single img {
+  margin: 0 auto;
+  display: block;
+}
+.page-program-single .testimony {
+  margin: 20px 0;
+}
+.page-program-single .track-breakdown {
+  width: 100%;
+}
+.page-program-single .track-breakdown .learndash_topic_dots.type-list {
+  display: block !important;
+}
+.page-program-single .track-breakdown #learndash_course_content_title,
+.page-program-single .track-breakdown .expand_collapse,
+.page-program-single .track-breakdown #lesson_heading,
+.page-program-single .track-breakdown #learndash_quizzes {
+  display: none !important;
+}
+@media (max-width: 575px) {
+  .page-programs {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}

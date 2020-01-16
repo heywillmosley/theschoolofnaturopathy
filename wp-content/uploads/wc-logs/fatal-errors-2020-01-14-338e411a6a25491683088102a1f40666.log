@@ -1,0 +1,72 @@
+2020-01-14T18:40:49+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:21
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 21
+
+2020-01-14T18:41:13+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:22
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 22
+
+2020-01-14T18:41:58+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:24
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 24
+
+2020-01-14T18:46:15+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:29
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 29
+
+2020-01-14T18:50:03+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:28
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 28
+
+2020-01-14T18:51:48+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:29
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 29
+
+2020-01-14T18:52:08+00:00 CRITICAL Uncaught Error: Cannot use object of type WC_Memberships_User_Membership as array in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:29
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 29
+
+2020-01-14T18:57:38+00:00 CRITICAL Uncaught Error: Call to undefined function print_admin() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:21
+Stack trace:
+#0 /home/schoolofnat/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolofnat/public_html/wp-blog-header.php(19): require_once('/home/schoolofn...')
+#2 /home/schoolofnat/public_html/index.php(17): require('/home/schoolofn...')
+#3 {main}
+  thrown in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 21
+
+2020-01-14T20:24:12+00:00 CRITICAL syntax error, unexpected end of file in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 458
+
+2020-01-14T20:45:40+00:00 CRITICAL require_once(): Failed opening required 'https://theschoolofnaturopathy.com/wp-content/themes/schoolofnaturopathyincludes/school_functions.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+
+2020-01-14T20:45:53+00:00 CRITICAL require_once(): Failed opening required 'https://theschoolofnaturopathy.com/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+
+2020-01-14T20:46:53+00:00 CRITICAL require_once(): Failed opening required 'https://theschoolofnaturopathy.com/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+
