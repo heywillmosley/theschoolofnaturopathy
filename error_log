@@ -535,3 +535,128 @@ Stack trace:
 [16-Jan-2020 14:16:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 303
 [16-Jan-2020 14:16:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 392
 [16-Jan-2020 14:16:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 410
+[16-Jan-2020 14:50:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 392
+[16-Jan-2020 14:50:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 410
+[16-Jan-2020 14:53:42 UTC] PHP Warning:  require_once(https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+[16-Jan-2020 14:53:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+[16-Jan-2020 14:54:47 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 143
+[16-Jan-2020 14:56:11 UTC] PHP Warning:  include_once(https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:56:11 UTC] PHP Warning:  include_once(): Failed opening 'https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:56:11 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 208
+[16-Jan-2020 14:56:11 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 208
+[16-Jan-2020 14:57:20 UTC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting ',' or ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 145
+[16-Jan-2020 14:57:34 UTC] PHP Warning:  include_once(https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:57:34 UTC] PHP Warning:  include_once(): Failed opening 'https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:57:34 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 211
+[16-Jan-2020 14:57:34 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 211
+[16-Jan-2020 14:58:30 UTC] PHP Warning:  include_once(https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php): failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+ in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:58:30 UTC] PHP Warning:  include_once(): Failed opening 'https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' for inclusion (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 12
+[16-Jan-2020 14:58:30 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 211
+[16-Jan-2020 14:58:30 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 211
+[16-Jan-2020 15:00:33 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 208
+[16-Jan-2020 15:00:33 UTC] PHP Notice:  Undefined variable: programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 208
+[16-Jan-2020 15:05:49 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 448
+[16-Jan-2020 15:05:49 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 466
+[16-Jan-2020 15:10:07 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 140
+[16-Jan-2020 15:20:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 396
+[16-Jan-2020 15:20:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 414
+[16-Jan-2020 19:26:24 UTC] PHP Parse error:  syntax error, unexpected 'const' (T_CONST), expecting variable (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 10
+[16-Jan-2020 19:28:37 UTC] PHP Parse error:  syntax error, unexpected '__construct' (T_STRING), expecting function (T_FUNCTION) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 13
+[16-Jan-2020 19:29:00 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 58
+[16-Jan-2020 19:29:40 UTC] PHP Fatal error:  Constant expression contains invalid operations in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 11
+[16-Jan-2020 19:32:11 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'getPrograms' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:28
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#3 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 28
+[16-Jan-2020 19:33:04 UTC] PHP Deprecated:  Non-static method EWSNSchool::getPrograms() should not be called statically in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 27
+[16-Jan-2020 19:33:04 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:21
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(27): EWSNSchool::getPrograms()
+#1 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#4 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 21
+[16-Jan-2020 19:33:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 417
+[16-Jan-2020 19:33:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 435
+[16-Jan-2020 19:34:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 419
+[16-Jan-2020 19:34:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 437
+[16-Jan-2020 19:36:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 421
+[16-Jan-2020 19:36:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 439
+[16-Jan-2020 20:02:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getProgramsGrid() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:52
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(65): EWSNSchool->setPageSchoolPrograms()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(24): EWSNSchool->getPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(135): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 52
+[16-Jan-2020 20:02:51 UTC] PHP Notice:  Undefined property: EWSNSchool::$program in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 106
+[16-Jan-2020 20:02:51 UTC] PHP Notice:  Undefined property: EWSNSchool::$program in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 106
+[16-Jan-2020 20:02:51 UTC] PHP Notice:  Undefined property: EWSNSchool::$program in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 106
+[16-Jan-2020 20:02:51 UTC] PHP Notice:  Undefined property: EWSNSchool::$program in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 106
+[16-Jan-2020 20:12:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function setProgramQuickLinks() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:109
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(52): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(65): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(24): EWSNSchool->getPageSchoolPrograms()
+#3 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(173): EWSNSchool->__construct()
+#4 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 109
+[16-Jan-2020 20:13:04 UTC] PHP Notice:  Use of undefined constant CURRICULUM - assumed 'CURRICULUM' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 138
+[16-Jan-2020 20:13:04 UTC] PHP Notice:  Use of undefined constant CURRICULUM - assumed 'CURRICULUM' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 138
+[16-Jan-2020 20:13:04 UTC] PHP Notice:  Use of undefined constant CURRICULUM - assumed 'CURRICULUM' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 138
+[16-Jan-2020 20:13:04 UTC] PHP Notice:  Use of undefined constant CURRICULUM - assumed 'CURRICULUM' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 138
+[16-Jan-2020 21:48:09 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 294
+[16-Jan-2020 21:49:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_current_user_membership_ids() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:166
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(75): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(43): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(574): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 166
+[16-Jan-2020 21:51:52 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 44
+[16-Jan-2020 21:52:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_current_user_membership_ids() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:187
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(76): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(44): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(575): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 187
+[16-Jan-2020 21:55:44 UTC] PHP Notice:  Undefined variable: trackLength in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 316
+[16-Jan-2020 21:55:44 UTC] PHP Fatal error:  Uncaught Error: Cannot access empty property in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:316
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(120): EWSNSchool->setTrackLength('19')
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(45): EWSNSchool->setPageSchoolProgramSingle()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(575): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 316
+[16-Jan-2020 21:56:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 492
+[16-Jan-2020 21:56:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 513
+[16-Jan-2020 21:57:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 513
+[16-Jan-2020 21:58:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 492
+[16-Jan-2020 21:58:47 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 513
+[16-Jan-2020 21:59:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 496
+[16-Jan-2020 21:59:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 517
+[16-Jan-2020 22:03:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 388

@@ -1,2 +1,95 @@
 2020-01-16T14:16:32+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /home/schoolofnat/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 143
 
+2020-01-16T14:53:42+00:00 CRITICAL require_once(): Failed opening required 'https://theschoolofnaturopathy.xyz/wp-content/themes/schoolofnaturopathy/includes/school_functions.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 8
+
+2020-01-16T14:54:47+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 143
+
+2020-01-16T14:57:20+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE), expecting ',' or ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 145
+
+2020-01-16T15:10:07+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 140
+
+2020-01-16T19:26:24+00:00 CRITICAL syntax error, unexpected 'const' (T_CONST), expecting variable (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 10
+
+2020-01-16T19:28:37+00:00 CRITICAL syntax error, unexpected '__construct' (T_STRING), expecting function (T_FUNCTION) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 13
+
+2020-01-16T19:29:00+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 58
+
+2020-01-16T19:29:40+00:00 CRITICAL Constant expression contains invalid operations in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 11
+
+2020-01-16T19:32:11+00:00 CRITICAL Uncaught Error: Undefined class constant 'getPrograms' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:28
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include()
+#1 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#3 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 28
+
+2020-01-16T19:33:04+00:00 CRITICAL Uncaught Error: Using $this when not in object context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:21
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(27): EWSNSchool::getPrograms()
+#1 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#4 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 21
+
+2020-01-16T20:02:30+00:00 CRITICAL Uncaught Error: Call to undefined function getProgramsGrid() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:52
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(65): EWSNSchool->setPageSchoolPrograms()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(24): EWSNSchool->getPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(135): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 52
+
+2020-01-16T20:12:40+00:00 CRITICAL Uncaught Error: Call to undefined function setProgramQuickLinks() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:109
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(52): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(65): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(24): EWSNSchool->getPageSchoolPrograms()
+#3 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(173): EWSNSchool->__construct()
+#4 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 109
+
+2020-01-16T21:48:09+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ',' or ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 294
+
+2020-01-16T21:49:51+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_user_membership_ids() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:166
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(75): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(43): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(574): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 166
+
+2020-01-16T21:51:52+00:00 CRITICAL syntax error, unexpected '$this' (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 44
+
+2020-01-16T21:52:26+00:00 CRITICAL Uncaught Error: Call to undefined function get_current_user_membership_ids() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:187
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(76): EWSNSchool->setProgramsGrid()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(44): EWSNSchool->setPageSchoolPrograms()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(575): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 187
+
+2020-01-16T21:55:44+00:00 CRITICAL Uncaught Error: Cannot access empty property in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:316
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(120): EWSNSchool->setTrackLength('19')
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(45): EWSNSchool->setPageSchoolProgramSingle()
+#2 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(575): EWSNSchool->__construct()
+#3 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 316
+
