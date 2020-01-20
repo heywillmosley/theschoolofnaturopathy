@@ -1,0 +1,30 @@
+2020-01-20T16:10:07+00:00 CRITICAL syntax error, unexpected 'print_r' (T_STRING), expecting ',' or ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 5
+
+2020-01-20T16:28:37+00:00 CRITICAL syntax error, unexpected end of file in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 179
+
+2020-01-20T16:29:04+00:00 CRITICAL syntax error, unexpected end of file in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 180
+
+2020-01-20T19:14:43+00:00 CRITICAL Uncaught Error: Call to undefined function setRelatedContent() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php:15
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php(129): EWSN_sidebar->__construct()
+#1 /home/schoolxyz/public_html/wp-settings.php(497): include('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-blog-header.php(13): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#6 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 15
+
+2020-01-20T19:16:46+00:00 CRITICAL syntax error, unexpected 'var' (T_VAR) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 74
+
+2020-01-20T20:08:04+00:00 CRITICAL Uncaught Error: Call to undefined method EWSN_sidebar::init_hooks() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php:98
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-includes/shortcodes.php(325): EWSN_sidebar->runSidebar('', '', 'ewsn-sidebar')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 /home/schoolxyz/public_html/wp-includes/shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(ewsn\\-...', 'do_shortcode_ta...', '[ewsn-sidebar]\n')
+#3 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(290): do_shortcode('[ewsn-sidebar]\n')
+#4 /home/schoolxyz/public_html/wp-includes/plugin.php(206): WP_Hook->apply_filters('[ewsn-sidebar]\n', Array)
+#5 /home/schoolxyz/public_html/wp-includes/widgets/class-wp-widget-text.php(293): apply_filters('widget_text_con...', '[ewsn-sidebar]', Array, Object(WP_Widget_Text))
+#6 /home/schoolxyz/public_html/wp-includes/class-wp-widget.php(379): WP_Widget_Text->widget(Array, Array)
+#7 /home/schoolxyz/public_html/wp-includes/widgets.php(805): in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/functions.php on line 98
+
