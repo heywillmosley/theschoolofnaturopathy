@@ -94,3 +94,134 @@ schoolof_master'@'localhost' (using password: YES) in /home/schoolofnat/public_h
 [20-Jan-2020 19:25:14 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/schoolxyz/public_html/wp-includes/functions.php:4986) in /home/schoolxyz/public_html/wp-includes/functions.php on line 6029
 [20-Jan-2020 19:25:16 UTC] PHP Notice:  wp_enqueue_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/schoolxyz/public_html/wp-includes/functions.php on line 4986
 [20-Jan-2020 19:25:16 UTC] PHP Notice:  wp_enqueue_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/schoolxyz/public_html/wp-includes/functions.php on line 4986
+[20-Jan-2020 21:17:19 UTC] PHP Notice:  wp_enqueue_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. Please see <a href="https://wordpress.org/support/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /home/schoolxyz/public_html/wp-includes/functions.php on line 4986
+[20-Jan-2020 21:17:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_memberships_get_user_active_memberships() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:587
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(49): EWSNPrograms->setCurrentUserMembershipIDs()
+#1 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(603): EWSNPrograms->__construct()
+#2 /home/schoolxyz/public_html/wp-settings.php(360): include_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 587
+[20-Jan-2020 21:23:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_memberships_get_user_active_memberships() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:587
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(49): EWSNPrograms->setCurrentUserMembershipIDs()
+#1 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(603): EWSNPrograms->__construct()
+#2 /home/schoolxyz/public_html/wp-settings.php(360): include_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 587
+[20-Jan-2020 21:25:02 UTC] PHP Parse error:  syntax error, unexpected 'global' (T_GLOBAL) in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 587
+[20-Jan-2020 21:27:48 UTC] PHP Fatal error:  Uncaught Error: Class 'WC_Memberships' not found in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:587
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(49): EWSNPrograms->setCurrentUserMembershipIDs()
+#1 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(603): EWSNPrograms->__construct()
+#2 /home/schoolxyz/public_html/wp-settings.php(360): include_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 587
+[20-Jan-2020 21:28:58 UTC] PHP Fatal error:  Uncaught Error: Class 'WC_Memberships' not found in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:588
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(49): EWSNPrograms->setCurrentUserMembershipIDs()
+#1 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(604): EWSNPrograms->__construct()
+#2 /home/schoolxyz/public_html/wp-settings.php(360): include_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 588
+[20-Jan-2020 21:29:01 UTC] PHP Fatal error:  Uncaught Error: Class 'WC_Memberships' not found in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:588
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(49): EWSNPrograms->setCurrentUserMembershipIDs()
+#1 /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php(604): EWSNPrograms->__construct()
+#2 /home/schoolxyz/public_html/wp-settings.php(360): include_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#7 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 588
+[20-Jan-2020 21:31:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 103
+[20-Jan-2020 21:31:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:103) in /home/schoolxyz/public_html/wp-includes/pluggable.php on line 1265
+[20-Jan-2020 21:31:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:103) in /home/schoolxyz/public_html/wp-includes/pluggable.php on line 1268
+[20-Jan-2020 21:35:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 103
+[20-Jan-2020 21:35:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_memberships_get_user_active_memberships() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:588
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): EWSNPrograms->setCurrentUserMembershipIDs('')
+#1 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 /home/schoolxyz/public_html/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /home/schoolxyz/public_html/wp-settings.php(392): do_action('plugins_loaded')
+#4 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#7 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#8 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 588
+[20-Jan-2020 21:40:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method EWSNPrograms::instance() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:606
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-settings.php(360): include_once()
+#1 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#5 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 606
+[20-Jan-2020 21:41:57 UTC] PHP Fatal error:  Uncaught Error: Undefined class constant 'instance' in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:606
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-settings.php(360): include_once()
+#1 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#2 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#5 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 606
+[20-Jan-2020 21:56:03 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 103
+[20-Jan-2020 21:56:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wc_memberships_get_user_active_memberships() in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php:588
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): EWSNPrograms->setCurrentUserMembershipIDs('')
+#1 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(312): WP_Hook->apply_filters(NULL, Array)
+#2 /home/schoolxyz/public_html/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /home/schoolxyz/public_html/wp-settings.php(392): do_action('plugins_loaded')
+#4 /home/schoolxyz/public_html/wp-config.php(47): require_once('/home/schoolxyz...')
+#5 /home/schoolxyz/public_html/wp-load.php(37): require_once('/home/schoolxyz...')
+#6 /home/schoolxyz/public_html/wp-admin/admin.php(34): require_once('/home/schoolxyz...')
+#7 /home/schoolxyz/public_html/wp-admin/plugins.php(10): require_once('/home/schoolxyz...')
+#8 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/plugins/ewsn-programs/ewsn-programs.php on line 588
+[20-Jan-2020 21:59:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function using_permalinks() on null in /home/schoolxyz/public_html/wp-includes/link-template.php:424
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/api/api-helpers.php(3133): get_attachment_link(Object(WP_Post))
+#1 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/fields/class-acf-field-image.php(347): acf_get_attachment(Object(WP_Post))
+#2 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): acf_field_image->format_value(270, 'options', Array)
+#3 /home/schoolxyz/public_html/wp-includes/plugin.php(249): WP_Hook->apply_filters('270', Array)
+#4 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/acf-hook-functions.php(101): apply_filters_ref_array('acf/format_valu...', Array)
+#5 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): _acf_apply_hook_variations('270', 'options', Array)
+#6 /home/schoolxyz/public_html/wp-includes/plugin.php(206): WP in /home/schoolxyz/public_html/wp-includes/link-template.php on line 424
+[20-Jan-2020 22:00:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function using_permalinks() on null in /home/schoolxyz/public_html/wp-includes/link-template.php:424
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/api/api-helpers.php(3133): get_attachment_link(Object(WP_Post))
+#1 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/fields/class-acf-field-image.php(347): acf_get_attachment(Object(WP_Post))
+#2 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): acf_field_image->format_value(270, 'options', Array)
+#3 /home/schoolxyz/public_html/wp-includes/plugin.php(249): WP_Hook->apply_filters('270', Array)
+#4 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/acf-hook-functions.php(101): apply_filters_ref_array('acf/format_valu...', Array)
+#5 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): _acf_apply_hook_variations('270', 'options', Array)
+#6 /home/schoolxyz/public_html/wp-includes/plugin.php(206): WP in /home/schoolxyz/public_html/wp-includes/link-template.php on line 424
+[20-Jan-2020 22:06:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function using_permalinks() on null in /home/schoolxyz/public_html/wp-includes/link-template.php:424
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/api/api-helpers.php(3133): get_attachment_link(Object(WP_Post))
+#1 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/fields/class-acf-field-image.php(347): acf_get_attachment(Object(WP_Post))
+#2 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): acf_field_image->format_value(270, 'options', Array)
+#3 /home/schoolxyz/public_html/wp-includes/plugin.php(249): WP_Hook->apply_filters('270', Array)
+#4 /home/schoolxyz/public_html/wp-content/plugins/advanced-custom-fields-pro/includes/acf-hook-functions.php(101): apply_filters_ref_array('acf/format_valu...', Array)
+#5 /home/schoolxyz/public_html/wp-includes/class-wp-hook.php(288): _acf_apply_hook_variations('270', 'options', Array)
+#6 /home/schoolxyz/public_html/wp-includes/plugin.php(206): WP in /home/schoolxyz/public_html/wp-includes/link-template.php on line 424
