@@ -14,6 +14,7 @@ class EWSNSchool
 
 	var $programs;
 	var $membershipIDs;
+	var $contdProgramsGrid;
 
 	// Pages
 	var $pageSchoolPrograms;
@@ -72,6 +73,7 @@ class EWSNSchool
 			$render .= "<div class='container'>";
 			$render .= "<div class='page-programs'>";
 			$render .= "<h1 class='title'>School Programs</h1>";
+			$render .= $this->setContdProgramsGrid();
 			$render .= "<p class='summary'>" . get_field('school_description', 'options') . "</p>";
 			$render .= $this->setProgramsGrid();
 			$render .= "</div>"; // end page-programs
@@ -147,16 +149,11 @@ class EWSNSchool
 		echo $this->pageSchoolProgramSingle;
 	}
 
-	function setProgramsGrid() {
-
-		$contd_render = "<div class='row'>";
+	function setContdProgramsGrid() {
+		$render = "<div class='row'>";
 		$contd_programs = "";
 		$contd_blank = "";
 
-		$render = "<div class='program-grid'>";
-		$render .= "<div class='row'>";
-
-		
 		if($this->programs) {
 			$i = 0;
 			$contd_count = 0;
@@ -171,13 +168,13 @@ class EWSNSchool
 				// Contd Render
 				if(in_array( $program_membership, $this->membershipIDs ) ) { // show continue program if member active
 
-					$contd_programs .= "<div class='col'>";
+					$contd_programs .= "<div class='col-sm-4'>";
 					$contd_programs .= "<div class='card'>";
 					$contd_programs .= wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' );
 					$contd_programs .= "<div class='card-body'>";
 					$contd_programs .= "<h5 class='card-title'>$title</h5>";
 					$contd_programs .= "<a href='$program_roadmap' class='btn btn-primary'>Continue Program</a>";
-					$contd_programs .=  "<p class='caption mt-2'><a href='$program_link'>More Details</a></p>";
+					$contd_programs .=  "<p class='caption mt-2'><a href='$program_link'>Program Details</a></p>";
 					$contd_programs .= "</div>";
 					$contd_programs .= "</div>";
 					$contd_programs .= "</div>";
@@ -189,40 +186,77 @@ class EWSNSchool
 				if(count( $this->membershipIDs ) > 0 && count($contd_count == 1)) {
 
 					while( $contd_count < 2 ) {
-						$contd_blank .= "<div class='col'>";
+						$contd_blank .= "<div class='col-sm-4'>";
 						$contd_blank .= "<div class='card contd-inactive'>";
 						$contd_blank .= "</div>";
 						$contd_blank .= "</div>";
 						$contd_count++;
 					}
 				}
-
-				// Programs
-				$render .= "<div class='col-sm-6 program-block'>";
-				$render .= "<a href='$program_link'><h2 class='block-title'><small>$title</small></h2></a>";
-				$render .= "<a href='$program_link'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'portrait' ) . "</a>";
-				$render .= "<p class='pt-3'>$summary</p>";
-				if(in_array( $program_membership, $this->membershipIDs ) )
-						$render .= "<p>Currently Enrolled</p>";
-				$render .=  $this->setProgramQuickLinks($program_link);
-				$render .= "</div>"; // end col-sm-6
-				
-				$i++;  
-				if ($i % 2 == 0 && $i != count( $this->programs )) { 
-					$render .= "</div><hr/><div class='row'>";
-				}
 				
 			} // end foreach
 		} // programs
 
-		$contd_render .= $contd_programs;
-		$contd_render .= $contd_blank;
-		$contd_render .= "</div><hr/>"; // end programs
+		$render .= $contd_programs;
+		$render .= $contd_blank;
+		$render .= "</div><hr/>"; // end programs
 
+		$this->contdProgramGrid = $render;
+		return "$render";
+	}
+
+	function getContdProgramsGrid() {
+		echo $this->contdProgramsGrid;
+	}
+
+	function setProgramsGrid() {
+
+		$render = "<div class='program-grid'>";
+		$render .= "<div class='row'>";
+
+		
+		if($this->programs) {
+			$i = 0;
+			$unenrolled_program_count = 0;
+
+			foreach( $this->programs as $program ) {
+				
+				$title = $program['program_title'];
+				$summary = $program['program_summary'];
+				$program_link = $program['program_landing'];
+				$program_roadmap = $program['program_roadmap'];
+				$program_membership = $program['connected_membership_plan'][0];
+
+				if(!in_array( $program_membership, $this->membershipIDs ) ) {
+					// Programs
+					$render .= "<div class='col-sm-6 program-block'>";
+					$render .= "<a href='$program_link'><h2 class='block-title'><small>$title</small></h2></a>";
+					$render .= "<a href='$program_link'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'portrait' ) . "</a>";
+					$render .= "<p class='pt-3'>$summary</p>";
+					if(in_array( $program_membership, $this->membershipIDs ) )
+							$render .= "<p>Currently Enrolled</p>";
+					$render .=  $this->setProgramQuickLinks($program_link);
+					$render .= "</div>"; // end col-sm-6
+
+					$unenrolled_program_count++; 
+				}
+
+
+					
+					if ( $unenrolled_program_count % 2 != 0 ) { 
+						$unerolled_blank = "<div class='col'>";
+						$unerolled_blank .= "</div>";
+					}
+				
+			} // end foreach
+		} // programs
+
+
+		$render .= $unerolled_blank; // end row
 		$render .= "</div>"; // end row
 		$render .= "</div>"; // end programs
 
-		return "$contd_render $render";
+		return "$render";
 	}
 
 	function getProgramsGrid() {

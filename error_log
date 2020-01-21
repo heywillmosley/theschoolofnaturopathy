@@ -812,3 +812,7 @@ We look forward to supporting you on your professional wellness journey at the E
 [21-Jan-2020 17:14:37 UTC] PHP Notice:  Undefined variable: contd_blank in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 191
 [21-Jan-2020 17:14:37 UTC] PHP Notice:  Undefined variable: contd_programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 174
 [21-Jan-2020 17:22:15 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 189
+[21-Jan-2020 18:42:09 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 217
+[21-Jan-2020 18:57:01 UTC] PHP Notice:  Undefined variable: contd_programs in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 232
+[21-Jan-2020 18:57:01 UTC] PHP Notice:  Undefined variable: contd_blank in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 250
+[21-Jan-2020 18:57:01 UTC] PHP Notice:  Undefined variable: contd_render in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 282
