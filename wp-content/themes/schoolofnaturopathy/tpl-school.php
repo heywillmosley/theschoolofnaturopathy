@@ -150,6 +150,8 @@ class EWSNSchool
 	function setProgramsGrid() {
 
 		$contd_render = "<div class='row'>";
+		$contd_programs = "";
+		$contd_blank = "";
 
 		$render = "<div class='program-grid'>";
 		$render .= "<div class='row'>";
@@ -157,6 +159,7 @@ class EWSNSchool
 		
 		if($this->programs) {
 			$i = 0;
+			$contd_count = 0;
 			foreach( $this->programs as $program ) {
 				
 				$title = $program['program_title'];
@@ -168,18 +171,31 @@ class EWSNSchool
 				// Contd Render
 				if(in_array( $program_membership, $this->membershipIDs ) ) { // show continue program if member active
 
-					$contd_render .= "<div class='col-sm-4'>";
-					$contd_render .= "<div class='card'>";
-					$contd_render .= wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' );
-					$contd_render .= "<div class='card-body'>";
-					$contd_render .= "<h5 class='card-title'>$title</h5>";
-					$contd_render .= "<a href='$program_roadmap' class='btn btn-primary'>Continue Program</a>";
-					$contd_render .=  "<p class='caption mt-2'><a href='$program_link'>More Details</a></p>";
-					$contd_render .= "</div>";
-					$contd_render .= "</div>";
-					$contd_render .= "</div>";
+					$contd_programs .= "<div class='col'>";
+					$contd_programs .= "<div class='card'>";
+					$contd_programs .= wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' );
+					$contd_programs .= "<div class='card-body'>";
+					$contd_programs .= "<h5 class='card-title'>$title</h5>";
+					$contd_programs .= "<a href='$program_roadmap' class='btn btn-primary'>Continue Program</a>";
+					$contd_programs .=  "<p class='caption mt-2'><a href='$program_link'>More Details</a></p>";
+					$contd_programs .= "</div>";
+					$contd_programs .= "</div>";
+					$contd_programs .= "</div>";
+					$contd_count++;
 
 				} 
+
+				// Add blanks if there aren't enough contd, add blanks
+				if(count( $this->membershipIDs ) > 0 && count($contd_count == 1)) {
+
+					while( $contd_count < 2 ) {
+						$contd_blank .= "<div class='col'>";
+						$contd_blank .= "<div class='card contd-inactive'>";
+						$contd_blank .= "</div>";
+						$contd_blank .= "</div>";
+						$contd_count++;
+					}
+				}
 
 				// Programs
 				$render .= "<div class='col-sm-6 program-block'>";
@@ -199,6 +215,8 @@ class EWSNSchool
 			} // end foreach
 		} // programs
 
+		$contd_render .= $contd_programs;
+		$contd_render .= $contd_blank;
 		$contd_render .= "</div><hr/>"; // end programs
 
 		$render .= "</div>"; // end row

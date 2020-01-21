@@ -12,15 +12,17 @@
 
 
 /* MySQL settings */
-define( 'DB_NAME',     'schoolof_20191223' );
-define( 'DB_USER',     'schoolof_master' );
-define( 'DB_PASSWORD', 'Z^T6~0sTYBwF' );
+define( 'DB_NAME',     'schoolxy_20200121' );
+define( 'DB_USER',     'schoolxy_master' );
+define( 'DB_PASSWORD', 'yi{dStryl8Ph' );
 define( 'DB_HOST',     'localhost' );
 define( 'DB_CHARSET',  'utf8mb4' );
 
 
 /* MySQL database table prefix. */
 $table_prefix = 'wp_';
+
+define( 'WP_DEBUG', true );
 
 
 /* Authentication Unique Keys and Salts. */
@@ -33,6 +35,8 @@ define( 'AUTH_SALT',        'put your unique phrase here' );
 define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
 define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
 define( 'NONCE_SALT',       'put your unique phrase here' );
+
+define( 'WP_DEBUG', false );
 
 
 /* Absolute path to the WordPress directory. */
