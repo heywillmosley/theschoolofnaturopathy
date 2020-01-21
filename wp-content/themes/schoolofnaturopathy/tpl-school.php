@@ -12,27 +12,27 @@ class EWSNSchool
 	const PAYMENT = FALSE;
 	const DEBUG = FALSE;
 
-	var $programs;
-	var $membershipIDs;
-	var $contdProgramsGrid;
+	private $programs;
+	private $membershipIDs;
+	private $contdProgramsGrid;
 
 	// Pages
-	var $pageSchoolPrograms;
-	var $pageSchoolProgramSingle;
+	private $pageSchoolPrograms;
+	private $pageSchoolProgramSingle;
 
 	// program specific
-	var $testimony;
-	var $trackLength;
-	var $trackHrs;
-	var $programOverview;
-	var $appBtn;
-	var $whatYoullLearn;
-	var $catalogDownloadBtn;
-	var $requiredSupplies;
-	var $programCurriculum;
-	var $problems;
-	var $features;
-	var $faq;
+	private $testimony;
+	private $trackLength;
+	private $trackHrs;
+	private $programOverview;
+	private $appBtn;
+	private $whatYoullLearn;
+	private $catalogDownloadBtn;
+	private $requiredSupplies;
+	private $programCurriculum;
+	private $problems;
+	private $features;
+	private $faq;
 
 	function __construct() {
 
@@ -49,21 +49,21 @@ class EWSNSchool
 		$this->getPageSchoolProgramSingle();
 	}
 
-	function setStyles() {
+	private function setStyles() {
 		wp_enqueue_style( 'school', get_stylesheet_directory_uri() . '/css/school.css' ); // styles
 	}
 
-	function setPrograms() {
+	private function setPrograms() {
 		$this->programs = get_field('program', 'options');
 	}
 
-	function getPrograms() {
+	private function getPrograms() {
 		echo "<pre>";
 		print_r($this->programs);
 		echo "</pre>";
 	}
 
-	function setPageSchoolPrograms() {
+	private function setPageSchoolPrograms() {
 
 		if ( basename( get_permalink() ) == 'programs' ) {
 
@@ -73,8 +73,8 @@ class EWSNSchool
 			$render .= "<div class='container'>";
 			$render .= "<div class='page-programs'>";
 			$render .= "<h1 class='title'>School Programs</h1>";
-			$render .= $this->setContdProgramsGrid();
 			$render .= "<p class='summary'>" . get_field('school_description', 'options') . "</p>";
+			$render .= $this->setContdProgramsGrid();
 			$render .= $this->setProgramsGrid();
 			$render .= "</div>"; // end page-programs
 			$render .= "</div>"; // end container
@@ -88,11 +88,11 @@ class EWSNSchool
 		} // end if program page
 	}
 
-	function getPageSchoolPrograms() {
+	private function getPageSchoolPrograms() {
 		echo $this->pageSchoolPrograms;
 	}
 
-	function setPageSchoolProgramSingle() {
+	private function setPageSchoolProgramSingle() {
 		if( $this->programs ) {
 
 			$render = "<div class='row'>";
@@ -145,73 +145,53 @@ class EWSNSchool
 
 	} // end setPageSchoolProgramSingle
 
-	function getPageSchoolProgramSingle() {
+	private function getPageSchoolProgramSingle() {
 		echo $this->pageSchoolProgramSingle;
 	}
 
-	function setContdProgramsGrid() {
-		$render = "<div class='row'>";
-		$contd_programs = "";
-		$contd_blank = "";
+	private function setContdProgramsGrid() {
+		if( $this->programs ) {
 
-		if($this->programs) {
-			$i = 0;
-			$contd_count = 0;
+			$render = "<div class='row'>";
+			$header = "";
+
 			foreach( $this->programs as $program ) {
 				
 				$title = $program['program_title'];
 				$summary = $program['program_summary'];
-				$program_link = $program['program_landing'];
-				$program_roadmap = $program['program_roadmap'];
-				$program_membership = $program['connected_membership_plan'][0];
+				$link = $program['program_landing'];
+				$roadmap = $program['program_roadmap'];
+				$membership = $program['connected_membership_plan'][0];
 
-				// Contd Render
-				if(in_array( $program_membership, $this->membershipIDs ) ) { // show continue program if member active
+				if( in_array( $membership, $this->membershipIDs ) ) {
+					$header = "<h6><strong>Enrolled Programs</strong></h6>";
 
-					$contd_programs .= "<div class='col-sm-4'>";
-					$contd_programs .= "<div class='card'>";
-					$contd_programs .= wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' );
-					$contd_programs .= "<div class='card-body'>";
-					$contd_programs .= "<h5 class='card-title'>$title</h5>";
-					$contd_programs .= "<a href='$program_roadmap' class='btn btn-primary'>Continue Program</a>";
-					$contd_programs .=  "<p class='caption mt-2'><a href='$program_link'>Program Details</a></p>";
-					$contd_programs .= "</div>";
-					$contd_programs .= "</div>";
-					$contd_programs .= "</div>";
-					$contd_count++;
-
-				} 
-
-				// Add blanks if there aren't enough contd, add blanks
-				if(count( $this->membershipIDs ) > 0 && count($contd_count == 1)) {
-
-					while( $contd_count < 2 ) {
-						$contd_blank .= "<div class='col-sm-4'>";
-						$contd_blank .= "<div class='card contd-inactive'>";
-						$contd_blank .= "</div>";
-						$contd_blank .= "</div>";
-						$contd_count++;
-					}
-				}
-				
+					$render .= "<div class='media mb-2 contd-media'>";
+					$render .= "<div class='media-body'>";
+					$render .= "<h4 class='mt-0'>$title</h4>";
+					$render .= "<a href='$roadmap' class='btn btn-primary btn-sm mb-1'>Continue Program</a>";
+					$render .= "<p class='caption'><a href='$link'>Program Details</a></p>";
+					$render .= "</div>";
+					$render .= "<a href='$roadmap' class='mr-2'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'thumbnail' ) . "</a>";
+					$render .= "</div>";
+				}	
 			} // end foreach
 		} // programs
 
-		$render .= $contd_programs;
-		$render .= $contd_blank;
-		$render .= "</div><hr/>"; // end programs
+		$render .= "</div>"; // end programs
 
-		$this->contdProgramGrid = $render;
-		return "$render";
+		$this->contdProgramGrid = "$header $render";
+		return "$header $render";
 	}
 
-	function getContdProgramsGrid() {
+	private function getContdProgramsGrid() {
 		echo $this->contdProgramsGrid;
 	}
 
-	function setProgramsGrid() {
+	private function setProgramsGrid() {
 
 		$render = "<div class='program-grid'>";
+		$render .= "<h6 class='mt-3'><strong>Available Programs</strong></h6>";
 		$render .= "<div class='row'>";
 
 		
@@ -259,11 +239,48 @@ class EWSNSchool
 		return "$render";
 	}
 
-	function getProgramsGrid() {
+	private function setttProgramsGrid() {
+
+		$render = "<div class='row'>";
+		$render .= "<h6 class='mt-3'><strong>Available Programs</strong></h6>";
+
+		
+		if($this->programs) {
+
+			foreach( $this->programs as $program ) {
+				
+				$title = $program['program_title'];
+				$summary = $program['program_summary'];
+				$link = $program['program_landing'];
+				$roadmap = $program['program_roadmap'];
+				$membership = $program['connected_membership_plan'][0];
+
+				if(!in_array( $membership, $this->membershipIDs ) ) {
+
+					$render .= "<div class='media mb-2 program-media'>";
+					$render .= "<a href='$link' class='mr-3 program-img'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' ) . "</a>";
+					$render .= "<div class='media-body'>";
+					$render .= "<h4 class='mt-0'>$title</h4>";
+					$render .= "<p class='mt-0'><small>$summary</small></p>";
+					$render .= "<a href='$link' class='btn btn-info btn-sm mb-1'>View Program</a>";
+					$render .= "</div>";
+					
+					$render .= "</div>";
+				}
+				
+			} // end foreach
+		} // programs
+
+		$render .= "</div>"; // end row
+
+		return "$render";
+	}
+
+	private function getProgramsGrid() {
 		echo $this->setProgramsGrid();
 	}
 
-	function setProgramQuickLinks($program_link) {
+	private function setProgramQuickLinks($program_link) {
 
 		if ( basename( get_permalink() ) == 'programs' ) {
 		
@@ -298,12 +315,12 @@ class EWSNSchool
 		return $render;
 	}
 
-	function getProgramQuickLinks() {
+	private function getProgramQuickLinks() {
 		echo $this->setProgramQuickLinks();
 	}
 
 	// Render EWSN Debug
-	function debugPrograms() {
+	private function debugPrograms() {
 		if( self::DEBUG) {
 			if( current_user_can('administrator') ) {
 				echo '<br/><hr/></br/><h2>Debug on. Only displays for Admin</h2>';
@@ -319,7 +336,7 @@ class EWSNSchool
 
 
 	// Display testimony
-	function setTestimony($testimony) { 
+	private function setTestimony($testimony) { 
 		
 		if( !empty($testimony) ) {
 
@@ -350,12 +367,12 @@ class EWSNSchool
 		} // end if
 	}
 
-	function getTestimony() {
+	private function getTestimony() {
 		echo $this->testimony;
 	}
 
 	// Render track length
-	function setTrackLength($length) { 
+	private function setTrackLength($length) { 
 		
 		if(!empty($length)) {
 
@@ -373,12 +390,12 @@ class EWSNSchool
 		}
 	}
 
-	function getTrackLength() {
+	private function getTrackLength() {
 		echo $this->trackLength;
 	}
 
 	// Render track length
-	function setTrackHrs($hrs) { 
+	private function setTrackHrs($hrs) { 
 		
 		if(!empty($hrs)) {
 
@@ -396,12 +413,12 @@ class EWSNSchool
 		}
 	}
 
-	function getTrackHrs() {
+	private function getTrackHrs() {
 		echo $this->trackHrs;
 	}
 
 	// Display testimony
-	function setProgramOverview($overview) { 
+	private function setProgramOverview($overview) { 
 		
 		if(!empty($overview)) {
 
@@ -419,22 +436,22 @@ class EWSNSchool
 		}
 	}
 
-	function getProgramOverview() {
+	private function getProgramOverview() {
 		echo $this->programOverview;
 	}
 
-	function setAppBtn($url) {
+	private function setAppBtn($url) {
 
 			$this->appBtn = "<a href='$url' target='_blank' class='btn btn-block btn-success btn-lg' role='button'>Fill Out Application</a>";
 			return $this->appBtn;
 	}
 
-	function getAppBtn() {
+	private function getAppBtn() {
 		echo $this->appBtn;
 	}
 
 	// Render What You'll Learn
-	function setWhatYoullLearn($list) {
+	private function setWhatYoullLearn($list) {
 		
 		if(!empty($list)) {
 
@@ -468,12 +485,12 @@ class EWSNSchool
 		}
 	}
 
-	function getWhatYoullLearn() {
+	private function getWhatYoullLearn() {
 		echo $this->whatYoullLearn;
 	}
 
 	// Render Catalog Download Button
-	function setCatalogDownloadBtn($url) {
+	private function setCatalogDownloadBtn($url) {
 		if(!empty($url)) {
 
 			$render = "<div class='text-center mb-3'>";
@@ -485,12 +502,12 @@ class EWSNSchool
 		}	
 	}
 
-	function getCatalogDownloadBtn() {
+	private function getCatalogDownloadBtn() {
 		echo $this->catalogDownloadBtn;
 	}
 
 	// Render Required Supplies
-	function setRequiredSupplies($list) {
+	private function setRequiredSupplies($list) {
 		$things = array();
 		$i = 0;
 		
@@ -521,11 +538,11 @@ class EWSNSchool
 
 	} 
 
-	function getRequiredSupplies() {
+	private function getRequiredSupplies() {
 		echo $this->requiredSupplies;
 	}
 
-	function setCurriculum($track_IDs) {
+	private function setCurriculum($track_IDs) {
 		
 		if($track_IDs && self::CURRICULUM) {
 			$render = "<div class='row'>";
@@ -547,11 +564,11 @@ class EWSNSchool
 		}
 	}
 
-	function getCurriculum() {
+	private function getCurriculum() {
 		echo $this->programCurriculum;
 	}
 
-	function setProblems($problems) {
+	private function setProblems($problems) {
 
 		if( !empty($problems) ) {
 
@@ -572,11 +589,11 @@ class EWSNSchool
 		}
 	}
 
-	function getProblems() {
+	private function getProblems() {
 		echo $this->problems;
 	}
 
-	function setFeatures ($features) {
+	private function setFeatures ($features) {
 
 		if( !empty($features) ) {
 		
@@ -596,12 +613,12 @@ class EWSNSchool
 		}
 	}
 
-	function getFeatures() {
+	private function getFeatures() {
 		echo $this->features;
 	}
 
 	// Render FAQ
-	function setFAQ($faqs) {
+	private function setFAQ($faqs) {
 		
 		if(!empty($faqs)) {
 			$render = '<h2>FAQ</h2>';
@@ -621,11 +638,11 @@ class EWSNSchool
 		} // end empty faq
 	}
 
-	function getFAQ() {
+	private function getFAQ() {
 		echo $this->faq;
 	}
 
-	function setCurrentUserMembershipIDs() { // return array
+	private function setCurrentUserMembershipIDs() { // return array
 		$user_id = get_current_user_id();
 		$args = array( 
 		    'status' => array( 'active' ),
@@ -641,7 +658,7 @@ class EWSNSchool
 		$this->membershipIDs = $membership_IDs;
 	}
 
-	function getCurrentUserMembershipIDs() {
+	private function getCurrentUserMembershipIDs() {
 		echo $this->membershipIDs;
 	}
 
