@@ -831,3 +831,13 @@ We look forward to supporting you on your professional wellness journey at the E
 [21-Jan-2020 20:58:57 UTC] PHP Notice:  Undefined variable: unerolled_blank in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 222
 [21-Jan-2020 21:13:52 UTC] PHP Notice:  Undefined variable: header in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 156
 [21-Jan-2020 22:18:50 UTC] PHP Parse error:  syntax error, unexpected 'const' (T_CONST), expecting variable (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 10
+[21-Jan-2020 22:21:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method EWSNSchool::setContdProgramsGrid() in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php:77
+Stack trace:
+#0 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(45): EWSNSchool->setPageSchoolPrograms()
+#1 /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php(667): EWSNSchool->__construct()
+#2 /home/schoolxyz/public_html/wp-includes/template-loader.php(98): include('/home/schoolxyz...')
+#3 /home/schoolxyz/public_html/wp-blog-header.php(19): require_once('/home/schoolxyz...')
+#4 /home/schoolxyz/public_html/index.php(17): require('/home/schoolxyz...')
+#5 {main}
+  thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 77
+[22-Jan-2020 14:28:54 UTC] PHP Parse error:  syntax error, unexpected '$btn' (T_VARIABLE), expecting ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 18

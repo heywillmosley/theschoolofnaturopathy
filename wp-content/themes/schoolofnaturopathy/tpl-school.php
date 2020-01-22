@@ -5,6 +5,66 @@ Template Name: School
 
 get_header();
 
+class WMMedia 
+{
+	public $title;
+	public $img;
+	public $bd;
+	public $URL;
+	public $mediaClass;
+	public $imgAlign;
+	public $btn;
+
+	function __construct( $class = '', $img = 'right', $btn = '' ) {
+		$this->mediaClass = $class;
+		$this->imgAlign = $img;
+		$this->btn = $btn;
+	}
+
+	function setTitle ($title) {
+		$this->title = $title;
+	}
+
+	function getTitle() {
+		return $this->title;
+	}
+
+	function setImg ($img) {
+		$this->img = $img;
+	}
+
+	function getImg() {
+		return $this->img;
+	}
+
+	function setBd ($bd) {
+		$this->bd = $bd;
+	}
+
+	function getBd() {
+		return $this->bd;
+	}
+
+	function setURL ($URL) {
+		$this->URL = $URL;
+	}
+
+	function getURL() {
+		return $this->URL;
+	}
+
+	function setMedia() {
+		$render .= "<div class='media mb-2'>";
+		$render .= "<div class='media-body'>";
+		$render .= "<h4 class='mt-0'>$title</h4>";
+		$render .= "<a href='$roadmap' class='btn btn-primary btn-sm mb-1'>Continue Program</a>";
+		$render .= "<p class='caption'><a href='$link'>Program Details</a></p>";
+		$render .= "</div>";
+		$render .= "<a href='$roadmap' class='mr-2'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'thumbnail' ) . "</a>";
+		$render .= "</div>";
+	}
+}
+
 class EWSNSchool 
 {
 	const STUDENT = FALSE;
@@ -14,7 +74,7 @@ class EWSNSchool
 
 	private $programs;
 	private $membershipIDs;
-	private $contdProgramsGrid;
+	private $contdPrograms;
 
 	// Pages
 	private $pageSchoolPrograms;
@@ -74,7 +134,7 @@ class EWSNSchool
 			$render .= "<div class='page-programs'>";
 			$render .= "<h1 class='title'>School Programs</h1>";
 			$render .= "<p class='summary'>" . get_field('school_description', 'options') . "</p>";
-			$render .= $this->setContdProgramsGrid();
+			$render .= $this->setContdPrograms();
 			$render .= $this->setProgramsGrid();
 			$render .= "</div>"; // end page-programs
 			$render .= "</div>"; // end container
@@ -127,8 +187,8 @@ class EWSNSchool
 					$render .= $this->setFeatures( $program['feature'] );
 					$render .= $program['closing_reason_to_enroll'];
 					$render .= "</hr>";
-					$render .= $this->setAppBtn( $program['application_link'] );
 					$render .= $this->setFAQ( $program['faq'] );
+					$render .= $this->setAppBtn( $program['application_link'] );
 					$render .= "</div>"; // end program
 
 					break;
@@ -149,7 +209,7 @@ class EWSNSchool
 		echo $this->pageSchoolProgramSingle;
 	}
 
-	private function setContdProgramsGrid() {
+	private function setContdPrograms() {
 		if( $this->programs ) {
 
 			$render = "<div class='row'>";
@@ -184,8 +244,8 @@ class EWSNSchool
 		return "$header $render";
 	}
 
-	private function getContdProgramsGrid() {
-		echo $this->contdProgramsGrid;
+	private function getContdPrograms() {
+		echo $this->contdPrograms;
 	}
 
 	private function setProgramsGrid() {
@@ -235,43 +295,6 @@ class EWSNSchool
 		$render .= $unerolled_blank; // end row
 		$render .= "</div>"; // end row
 		$render .= "</div>"; // end programs
-
-		return "$render";
-	}
-
-	private function setttProgramsGrid() {
-
-		$render = "<div class='row'>";
-		$render .= "<h6 class='mt-3'><strong>Available Programs</strong></h6>";
-
-		
-		if($this->programs) {
-
-			foreach( $this->programs as $program ) {
-				
-				$title = $program['program_title'];
-				$summary = $program['program_summary'];
-				$link = $program['program_landing'];
-				$roadmap = $program['program_roadmap'];
-				$membership = $program['connected_membership_plan'][0];
-
-				if(!in_array( $membership, $this->membershipIDs ) ) {
-
-					$render .= "<div class='media mb-2 program-media'>";
-					$render .= "<a href='$link' class='mr-3 program-img'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'medium' ) . "</a>";
-					$render .= "<div class='media-body'>";
-					$render .= "<h4 class='mt-0'>$title</h4>";
-					$render .= "<p class='mt-0'><small>$summary</small></p>";
-					$render .= "<a href='$link' class='btn btn-info btn-sm mb-1'>View Program</a>";
-					$render .= "</div>";
-					
-					$render .= "</div>";
-				}
-				
-			} // end foreach
-		} // programs
-
-		$render .= "</div>"; // end row
 
 		return "$render";
 	}
@@ -621,7 +644,9 @@ class EWSNSchool
 	private function setFAQ($faqs) {
 		
 		if(!empty($faqs)) {
-			$render = '<h2>FAQ</h2>';
+			$render = "<div class='row'>";
+			$render .= "<div class='col'>";
+			$render .= '<h2>FAQ</h2>';
 			$render .= '<ul>';
 			
 			foreach($faqs as $faq) {
@@ -631,6 +656,9 @@ class EWSNSchool
 				$render .= '<p><strong>A:</strong> ' . $faq['answer'] . '</p>';
 				$render .= '<hr/></li>';
 			}
+
+			$render .= "</div>";
+			$render .= "</div>";
 			
 			$this->faq = $render;
 			return $render;
