@@ -7,18 +7,27 @@ get_header();
 
 class WMMedia 
 {
+	public $media;
+	protected $args;
 	public $title;
 	public $img;
 	public $bd;
 	public $URL;
 	public $mediaClass;
-	public $imgAlign;
+	public $imgAlign = 'left';
 	public $btn;
 
-	function __construct( $class = '', $img = 'right', $btn = '' ) {
-		$this->mediaClass = $class;
-		$this->imgAlign = $img;
-		$this->btn = $btn;
+	function __construct( array $options = array() ) {
+
+		// Check for a necessary arg
+        //if ( !isset( $options['requiredArg1'] ) )
+        //    throw new Exception('Missing requiredArg1');
+
+        // Now I can just localize
+        //$requiredArg1 = $options['requiredArg1'];
+        //$this->mediaClass = (isset($options['class'])) ? $options['class'] : null;
+        //$this->imgAlign = (isset($options['img'])) ? $options['img'] : 'right';
+        //$this->btn = (isset($options['btn'])) ? $options['btn'] : null;
 	}
 
 	function setTitle ($title) {
@@ -53,26 +62,50 @@ class WMMedia
 		return $this->URL;
 	}
 
+	function setBtn($text, $URL, $type = 'info', $classes = '') {
+		$this->btn = "<a class='btn btn-$type $classes' href='$link'' role='button'>$text</a>";
+	}
+
+	function getBtn() {
+		return $this->btn;
+	}
+
 	function setMedia() {
-		$render .= "<div class='media mb-2'>";
+
+		$render = "<div class='media wm-media mb-2 $this->mediaClass'>";
+		if( isset( $this->img ) && $this->imgAlign == 'right' )
+			$render .= "<img class='mr-3' src='" . $this->getImg() . "' />";
 		$render .= "<div class='media-body'>";
-		$render .= "<h4 class='mt-0'>$title</h4>";
-		$render .= "<a href='$roadmap' class='btn btn-primary btn-sm mb-1'>Continue Program</a>";
-		$render .= "<p class='caption'><a href='$link'>Program Details</a></p>";
+		if( $this->title )
+			$render .= "<h4 class='mt-0'>" . $this->getTitle() . "</h4>";
+		$render .= $this->getBd();
+		if($this->btn )
+			$render .= $this->getBtn();
 		$render .= "</div>";
-		$render .= "<a href='$roadmap' class='mr-2'>" . wp_get_attachment_image( $program['program_feature_image']['ID'], 'thumbnail' ) . "</a>";
+		if( isset( $this->img ) && $this->imgAlign == 'left')
+			$render .= "<img class='ml-3' src='" . $this->getImg() . "' />";
 		$render .= "</div>";
+
+		$this->media = $render;
+	}
+
+	function getMedia() {
+		return $this->media;
 	}
 }
 
 class EWSNSchool 
 {
+	/** template version number */
+	const VERSION = '1.0.0'; // time to start tracking changes
+
 	const STUDENT = FALSE;
 	const CURRICULUM = FALSE;
 	const PAYMENT = FALSE;
 	const DEBUG = FALSE;
 
 	private $programs;
+	private $programsGrid;
 	private $membershipIDs;
 	private $contdPrograms;
 
@@ -85,6 +118,7 @@ class EWSNSchool
 	private $trackLength;
 	private $trackHrs;
 	private $programOverview;
+	private $programQuickLinks;
 	private $appBtn;
 	private $whatYoullLearn;
 	private $catalogDownloadBtn;
@@ -105,8 +139,8 @@ class EWSNSchool
 		$this->setPageSchoolPrograms();
 		$this->setPageSchoolProgramSingle();
 
-		$this->getPageSchoolPrograms();
-		$this->getPageSchoolProgramSingle();
+		echo $this->getPageSchoolPrograms();
+		echo $this->getPageSchoolProgramSingle();
 	}
 
 	private function setStyles() {
@@ -118,15 +152,16 @@ class EWSNSchool
 	}
 
 	private function getPrograms() {
-		echo "<pre>";
-		print_r($this->programs);
-		echo "</pre>";
+		return $this->programs;
+
 	}
 
 	private function setPageSchoolPrograms() {
 
 		if ( basename( get_permalink() ) == 'programs' ) {
 
+			$this->setContdPrograms();
+			$this->setProgramsGrid();
 			$render = "<div class='fl-content-full container'>";
 			$render .= "<div class='row'>";
 			$render .= "<div class='fl-content col-md-12'>";
@@ -134,8 +169,8 @@ class EWSNSchool
 			$render .= "<div class='page-programs'>";
 			$render .= "<h1 class='title'>School Programs</h1>";
 			$render .= "<p class='summary'>" . get_field('school_description', 'options') . "</p>";
-			$render .= $this->setContdPrograms();
-			$render .= $this->setProgramsGrid();
+			$render .= $this->getContdPrograms();
+			$render .= $this->getProgramsGrid();
 			$render .= "</div>"; // end page-programs
 			$render .= "</div>"; // end container
 			$render .= "</div>"; // end fl-content col-md-12
@@ -143,19 +178,18 @@ class EWSNSchool
 			$render .= "</div>"; // end fl-content-full container
 
 			$this->pageSchoolPrograms = $render;
-			return $render;
 
 		} // end if program page
 	}
 
 	private function getPageSchoolPrograms() {
-		echo $this->pageSchoolPrograms;
+		return $this->pageSchoolPrograms;
 	}
 
 	private function setPageSchoolProgramSingle() {
 		if( $this->programs ) {
 
-			$render = "<div class='row'>";
+			$render = "<div class='container'>";
 			foreach( $this->programs as $program ) {
 
 				if($program['program_landing'] == get_permalink() ) {
@@ -167,28 +201,42 @@ class EWSNSchool
 					$image_size = 'large'; // (thumbnail, medium, large, full or custom size)
 					$program_membership = $program['connected_membership_plan'][0];
 
+					// Set
+					$this->setCatalogDownloadBtn( $program['download_catalog'] );
+					$this->setTestimony( $program['testimonials'][0] );
+					$this->setProgramOverview( $program['program_overview'] );
+					$this->setWhatYoullLearn( $program['what_youll_learn'] );
+					$this->setTrackLength( $program['track_length'] );
+					$this->setTrackHrs( $program['number_of_hours_for_program'] );
+					$this->setProblems( $program['problem_solved'] );
+					$this->setTestimony( $program['testimonials'][1] );
+					$this->setFeatures( $program['feature'] );
+					$this->setFAQ( $program['faq'] );
+					$this->setAppBtn( $program['application_link'] );
+
+					// Render
 					$render .= "<div class='page-program-single'>";
 					$render .= "<div class='row'>";
-					$render .= "<div class='col'>";
+					$render .= "<div class='col-12'>";
 					$render .= "<h1 class='title'>$title</h1>";
 					$render .= "<h2 class='headline'>$headline</h2>";
 					$render .= "<p class='summary'>$summary</p>";
-					$render .= $this->setCatalogDownloadBtn( $program['download_catalog'] );
+					$render .= $this->getCatalogDownloadBtn();
 					$render .= wp_get_attachment_image( $program['program_feature_image']['ID'], $image_size );
-					$render .= $this->setTestimony( $program['testimonials'][0] );
+					$render .= $this->getTestimony();
 					$render .= "</div>"; // end col
 					$render .= "</div>"; // end row
-					$render .= $this->setProgramOverview( $program['program_overview'] );
-					$render .= $this->setWhatYoullLearn( $program['what_youll_learn'] );
-					$render .= $this->setTrackLength( $program['track_length'] );
-					$render .= $this->setTrackHrs( $program['number_of_hours_for_program'] );
-					$render .= $this->setProblems( $program['problem_solved'] );
-					$render .= $this->setTestimony( $program['testimonials'][1] );
-					$render .= $this->setFeatures( $program['feature'] );
+					$render .= $this->getProgramOverview();
+					$render .= $this->getWhatYoullLearn();
+					$render .= $this->getTrackLength();
+					$render .= $this->getTrackHrs();
+					$render .= $this->getProblems();
+					$render .= $this->getTestimony();
+					$render .= $this->getFeatures();
 					$render .= $program['closing_reason_to_enroll'];
 					$render .= "</hr>";
-					$render .= $this->setFAQ( $program['faq'] );
-					$render .= $this->setAppBtn( $program['application_link'] );
+					$render .= $this->getFAQ();
+					$render .= $this->getAppBtn();
 					$render .= "</div>"; // end program
 
 					break;
@@ -199,14 +247,13 @@ class EWSNSchool
 			$render .= "</div>"; // end row
 
 			$this->pageSchoolProgramSingle = $render;
-			return $render;
 
 		} // end if
 
 	} // end setPageSchoolProgramSingle
 
 	private function getPageSchoolProgramSingle() {
-		echo $this->pageSchoolProgramSingle;
+		return $this->pageSchoolProgramSingle;
 	}
 
 	private function setContdPrograms() {
@@ -240,12 +287,11 @@ class EWSNSchool
 
 		$render .= "</div>"; // end programs
 
-		$this->contdProgramGrid = "$header $render";
-		return "$header $render";
+		$this->contdPrograms = "$header $render";
 	}
 
 	private function getContdPrograms() {
-		echo $this->contdPrograms;
+		return $this->contdPrograms;
 	}
 
 	private function setProgramsGrid() {
@@ -275,7 +321,7 @@ class EWSNSchool
 					$render .= "<p class='pt-3'>$summary</p>";
 					if(in_array( $program_membership, $this->membershipIDs ) )
 							$render .= "<p>Currently Enrolled</p>";
-					$render .=  $this->setProgramQuickLinks($program_link);
+					$render .=  $this->getProgramQuickLinks($program_link);
 					$render .= "</div>"; // end col-sm-6
 
 					$unenrolled_program_count++; 
@@ -296,11 +342,11 @@ class EWSNSchool
 		$render .= "</div>"; // end row
 		$render .= "</div>"; // end programs
 
-		return "$render";
+		$this->programsGrid = $render;
 	}
 
 	private function getProgramsGrid() {
-		echo $this->setProgramsGrid();
+		return $this->programsGrid;
 	}
 
 	private function setProgramQuickLinks($program_link) {
@@ -311,8 +357,6 @@ class EWSNSchool
 			$render .= "<a href='$program_link'>View Program</a>";
 			if( self::CURRICULUM )
 				$render .= "<a href='$program_link#curriculum'>Curriculum</a> | ";
-			//$render .= "<a href='$program_link#faq'>FAQ</a> | ";
-			//$render .= "<a href='$program_link#apply'>Apply</a>";
 			$render .= "</div>"; // end program-links
 			
 		} else {
@@ -327,19 +371,15 @@ class EWSNSchool
 				$render .= "<a class='nav-link' href='$program_link#curriculum'>Curriculum</a>";
 			$render .= '</li>';
 			$render .= '<li class="nav-item">';
-			// $render .= "<a class='nav-link' href='$program_link#faq'>FAQ</a>";
 			$render .= '</li>';
-			//$render .= '<li class="nav-item">';
-			//$render .= "<a class='nav-link' href='$program_link#apply'>Apply</a>";
-			//$render .= '</li>';
 			$render .= '</ul>';
 		}
 
-		return $render;
+		$this->programQuickLinks = $render;
 	}
 
 	private function getProgramQuickLinks() {
-		echo $this->setProgramQuickLinks();
+		return $this->programQuickLinks;
 	}
 
 	// Render EWSN Debug
@@ -385,13 +425,12 @@ class EWSNSchool
 			$render .= "</blockquote><hr/>";
 
 			$this->testimony = $render;
-			return $render;
 
 		} // end if
 	}
 
 	private function getTestimony() {
-		echo $this->testimony;
+		return $this->testimony;
 	}
 
 	// Render track length
@@ -414,7 +453,7 @@ class EWSNSchool
 	}
 
 	private function getTrackLength() {
-		echo $this->trackLength;
+		return $this->trackLength;
 	}
 
 	// Render track length
@@ -432,12 +471,11 @@ class EWSNSchool
 			$render .= "</div>";
 
 			$this->trackHrs = $render;
-			return $render;
 		}
 	}
 
 	private function getTrackHrs() {
-		echo $this->trackHrs;
+		return $this->trackHrs;
 	}
 
 	// Display testimony
@@ -455,22 +493,20 @@ class EWSNSchool
 			$render .= "</div>";
 
 			$this->programOverview = $render;
-			return $render;
 		}
 	}
 
 	private function getProgramOverview() {
-		echo $this->programOverview;
+		return $this->programOverview;
 	}
 
 	private function setAppBtn($url) {
 
 			$this->appBtn = "<a href='$url' target='_blank' class='btn btn-block btn-success btn-lg' role='button'>Fill Out Application</a>";
-			return $this->appBtn;
 	}
 
 	private function getAppBtn() {
-		echo $this->appBtn;
+		return $this->appBtn;
 	}
 
 	// Render What You'll Learn
@@ -503,13 +539,12 @@ class EWSNSchool
 				$render .= '</ul></div></div>';
 				
 				$this->whatYoullLearn = $render;
-				return $render;
 			}
 		}
 	}
 
 	private function getWhatYoullLearn() {
-		echo $this->whatYoullLearn;
+		return $this->whatYoullLearn;
 	}
 
 	// Render Catalog Download Button
@@ -521,12 +556,11 @@ class EWSNSchool
 			$render .= "</div>";
 			
 			$this->catalogDownloadBtn = $render;
-			return $render;
 		}	
 	}
 
 	private function getCatalogDownloadBtn() {
-		echo $this->catalogDownloadBtn;
+		return $this->catalogDownloadBtn;
 	}
 
 	// Render Required Supplies
@@ -556,13 +590,12 @@ class EWSNSchool
 			$render .= '</ul></div></div>';
 			
 			$this->requiredSupplies = $render;
-			return $render;
 		}
 
 	} 
 
 	private function getRequiredSupplies() {
-		echo $this->requiredSupplies;
+		return $this->requiredSupplies;
 	}
 
 	private function setCurriculum($track_IDs) {
@@ -583,12 +616,11 @@ class EWSNSchool
 			$render .= "</div>";
 
 			$this->programCurriculum = $render;
-			return $render;
 		}
 	}
 
 	private function getCurriculum() {
-		echo $this->programCurriculum;
+		return $this->programCurriculum;
 	}
 
 	private function setProblems($problems) {
@@ -607,13 +639,12 @@ class EWSNSchool
 			}
 			
 			$this->problems = $render;
-			return $render;
 
 		}
 	}
 
 	private function getProblems() {
-		echo $this->problems;
+		return $this->problems;
 	}
 
 	private function setFeatures ($features) {
@@ -632,12 +663,11 @@ class EWSNSchool
 			}
 			
 			$this->features = $render;
-			return $render;
 		}
 	}
 
 	private function getFeatures() {
-		echo $this->features;
+		return $this->features;
 	}
 
 	// Render FAQ
@@ -652,7 +682,7 @@ class EWSNSchool
 			foreach($faqs as $faq) {
 				
 				$render .= '<li">';
-				$render .= '<p><strong>Q:</strong> ' . $faq['question'] . '</p>';
+				$render .= '<p><strong>Q: ' . $faq['question'] . '</strong></p>';
 				$render .= '<p><strong>A:</strong> ' . $faq['answer'] . '</p>';
 				$render .= '<hr/></li>';
 			}
@@ -661,13 +691,12 @@ class EWSNSchool
 			$render .= "</div>";
 			
 			$this->faq = $render;
-			return $render;
 
 		} // end empty faq
 	}
 
 	private function getFAQ() {
-		echo $this->faq;
+		return $this->faq;
 	}
 
 	private function setCurrentUserMembershipIDs() { // return array
@@ -687,7 +716,7 @@ class EWSNSchool
 	}
 
 	private function getCurrentUserMembershipIDs() {
-		echo $this->membershipIDs;
+		return $this->membershipIDs;
 	}
 
 } // end class

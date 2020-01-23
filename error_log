@@ -841,3 +841,37 @@ Stack trace:
 #5 {main}
   thrown in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 77
 [22-Jan-2020 14:28:54 UTC] PHP Parse error:  syntax error, unexpected '$btn' (T_VARIABLE), expecting ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 18
+[22-Jan-2020 14:56:45 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ';' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 122
+[22-Jan-2020 14:57:19 UTC] PHP Warning:  Missing argument 1 for EWSNSchool::setProgramQuickLinks(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 339 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 303
+[22-Jan-2020 14:57:19 UTC] PHP Notice:  Undefined variable: program_link in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 308
+[22-Jan-2020 14:57:19 UTC] PHP Warning:  Missing argument 1 for EWSNSchool::setProgramQuickLinks(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 339 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 303
+[22-Jan-2020 14:57:19 UTC] PHP Notice:  Undefined variable: program_link in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 308
+[22-Jan-2020 14:57:19 UTC] PHP Warning:  Missing argument 1 for EWSNSchool::setProgramQuickLinks(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 339 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 303
+[22-Jan-2020 14:57:19 UTC] PHP Notice:  Undefined variable: program_link in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 308
+[22-Jan-2020 14:57:19 UTC] PHP Warning:  Missing argument 1 for EWSNSchool::setProgramQuickLinks(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 339 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 303
+[22-Jan-2020 14:57:19 UTC] PHP Notice:  Undefined variable: program_link in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 308
+[22-Jan-2020 15:47:18 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:50:06 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:50:47 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:51:53 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:52:39 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 66
+[22-Jan-2020 15:52:57 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:53:23 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 59
+[22-Jan-2020 15:54:22 UTC] PHP Fatal error:  Can't use method return value in write context in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 66
+[22-Jan-2020 16:08:00 UTC] PHP Notice:  Undefined variable: imgAlign in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 67
+[22-Jan-2020 16:12:17 UTC] PHP Warning:  Missing argument 1 for WMMedia::__construct(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 150 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 19
+[22-Jan-2020 16:12:17 UTC] PHP Warning:  Missing argument 2 for WMMedia::__construct(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 150 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 19
+[22-Jan-2020 16:12:17 UTC] PHP Warning:  Missing argument 3 for WMMedia::__construct(), called in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 150 and defined in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 19
+[22-Jan-2020 16:12:17 UTC] PHP Notice:  Undefined variable: class in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 20
+[22-Jan-2020 16:12:17 UTC] PHP Notice:  Undefined variable: img in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 21
+[22-Jan-2020 16:12:17 UTC] PHP Notice:  Undefined variable: btn in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 22
+[22-Jan-2020 16:12:17 UTC] PHP Notice:  Undefined variable: imgAlign in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 67
+[22-Jan-2020 16:24:11 UTC] PHP Notice:  Undefined variable: imgAlign in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 75
+[22-Jan-2020 16:24:38 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 30
+[22-Jan-2020 16:24:57 UTC] PHP Notice:  Undefined variable: imgAlign in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 75
+[22-Jan-2020 16:25:31 UTC] PHP Notice:  Undefined variable: imgAlign in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 75
+[22-Jan-2020 16:27:28 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 157
+[22-Jan-2020 16:56:55 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 171
+[22-Jan-2020 16:56:57 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 171
+[22-Jan-2020 16:57:09 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 171
+[22-Jan-2020 16:57:25 UTC] PHP Notice:  Undefined variable: link in /home/schoolxyz/public_html/wp-content/themes/schoolofnaturopathy/tpl-school.php on line 66
