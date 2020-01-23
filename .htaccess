@@ -1,25 +1,3 @@
-# Block IPS except New Human
-#order deny,allow
-#deny from all
-#NH Corporate
-#allow from 67.58.118.95
-#NH Production
-#allow from 67.58.118.250
-#Miriam
-#allow from 73.24.187.63
-#William
-#allow from 97.82.222.245
-#Rebecca
-#allow from 75.130.153.118
-# Rebecca Coffee House 1
-#allow from 174.196.141.154
-# Filo East Asheville
-#allow from 71.85.104.228
-# Mike Casey
-#allow from 173.184.33.150
-# Joda Woolley
-#allow from 68.235.237.142
-
 # BEGIN WordPress
 # The directives (lines) between `BEGIN WordPress` and `END WordPress` are
 # dynamically generated, and should only be modified via WordPress filters.
