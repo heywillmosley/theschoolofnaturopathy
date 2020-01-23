@@ -16,6 +16,7 @@ class WMMedia
 	public $mediaClass;
 	public $imgAlign = 'left';
 	public $btn;
+	public $faq;
 
 	function __construct( array $options = array() ) {
 
